@@ -1493,20 +1493,924 @@ while True:
 
 #### 1.8.1 数字
 
+**complex(x)** 将x转换到一个复数，实数部分为 x，虚数部分为 0。
+
+**complex(x, y)** 将 x 和 y 转换到一个复数，实数部分为 x，虚数部分为 y。x 和 y 是数字表达式。
+
+数学函数
+
+| 函数                                                         | 返回值 ( 描述 )                                              |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [abs(x)](https://www.w3cschool.cn/python3/python3-func-number-abs.html) | 返回数字的绝对值，如abs(-10) 返回 10                         |
+| [ceil(x)](https://www.w3cschool.cn/python3/python3-func-number-ceil.html) | 返回数字的上入整数，如math.ceil(4.1) 返回 5                  |
+| cmp(x, y)                                                    | 如果 x < y 返回 -1, 如果 x == y 返回 0, 如果 x > y 返回 1。 **Python 3 已废弃，使用 (x>y)-(x<y) 替换**。 |
+| [exp(x)](https://www.w3cschool.cn/python3/python3-func-number-exp.html) | 返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045         |
+| [fabs(x)](https://www.w3cschool.cn/python3/python3-func-number-fabs.html) | 返回数字的绝对值，如math.fabs(-10) 返回10.0                  |
+| [floor(x)](https://www.w3cschool.cn/python3/python3-func-number-floor.html) | 返回数字的下舍整数，如math.floor(4.9)返回 4                  |
+| [log(x)](https://www.w3cschool.cn/python3/python3-func-number-log.html) | 如math.log(math.e)返回1.0,math.log(100,10)返回2.0            |
+| [log10(x)](https://www.w3cschool.cn/python3/python3-func-number-log10.html) | 返回以10为基数的x的对数，如math.log10(100)返回 2.0           |
+| [max(x1, x2,...)](https://www.w3cschool.cn/python3/python3-func-number-max.html) | 返回给定参数的最大值，参数可以为序列。                       |
+| [min(x1, x2,...)](https://www.w3cschool.cn/python3/python3-func-number-min.html) | 返回给定参数的最小值，参数可以为序列。                       |
+| [modf(x)](https://www.w3cschool.cn/python3/python3-func-number-modf.html) | 返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示。 |
+| [pow(x, y)](https://www.w3cschool.cn/python3/python3-func-number-pow.html) | x**y 运算后的值。                                            |
+| [round(x [,n\])](https://www.w3cschool.cn/python3/python3-func-number-round.html) | 返回浮点数 x 的四舍五入值，如给出 n 值，则代表舍入到小数点后的位数。**其实准确的说是保留值将保留到离上一位更近的一端。** |
+| [sqrt(x)](https://www.w3cschool.cn/python3/python3-func-number-sqrt.html) | 返回数字x的平方根。                                          |
+
+随机数函数
+
+随机数可以用于数学，游戏，安全等领域中，还经常被嵌入到算法中，用以提高算法效率，并提高程序的安全性。
+
+Python包含以下常用随机数函数：
+
+| 函数                                                         | 描述                                                         |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| [choice(seq)](https://www.w3cschool.cn/python3/python3-func-number-choice.html) | 从序列的元素中随机挑选一个元素，比如random.choice(range(10))，从0到9中随机挑选一个整数。 |
+| [randrange ([start,\] stop [,step])](https://www.w3cschool.cn/python3/python3-func-number-randrange.html) | 从指定范围内，按指定基数递增的集合中获取一个随机数，基数默认值为 1 |
+| [random()](https://www.w3cschool.cn/python3/python3-func-number-random.html) | 随机生成下一个实数，它在[0,1)范围内。                        |
+| [seed([x\])](https://www.w3cschool.cn/python3/python3-func-number-seed.html) | 改变随机数生成器的种子seed。如果你不了解其原理，你不必特别去设定seed，Python会帮你选择seed。 |
+| [shuffle(lst)](https://www.w3cschool.cn/python3/python3-func-number-shuffle.html) | 将序列的所有元素随机排序                                     |
+| [uniform(x, y)](https://www.w3cschool.cn/python3/python3-func-number-uniform.html) | 随机生成下一个实数，它在[x,y]范围内。                        |
+
+三角函数
+
+Python包括以下三角函数：
+
+| 函数                                                         | 描述                                              |
+| :----------------------------------------------------------- | :------------------------------------------------ |
+| [acos(x)](https://www.w3cschool.cn/python3/python3-func-number-acos.html#) | 返回x的反余弦弧度值。                             |
+| [asin(x)](https://www.w3cschool.cn/python3/python3-func-number-asin.html) | 返回x的反正弦弧度值。                             |
+| [atan(x)](https://www.w3cschool.cn/python3/python3-func-number-atan.html) | 返回x的反正切弧度值。                             |
+| [atan2(y, x)](https://www.w3cschool.cn/python3/python3-func-number-atan2.html) | 返回给定的 X 及 Y 坐标值的反正切值。              |
+| [cos(x)](https://www.w3cschool.cn/python3/python3-func-number-cos.html) | 返回x的弧度的余弦值。                             |
+| [hypot(x, y)](https://www.w3cschool.cn/python3/python3-func-number-hypot.html) | 返回欧几里德范数 sqrt(x*x + y*y)。                |
+| [sin(x)](https://www.w3cschool.cn/python3/python3-func-number-sin.html) | 返回的x弧度的正弦值。                             |
+| [tan(x)](https://www.w3cschool.cn/python3/python3-func-number-tan.html) | 返回x弧度的正切值。                               |
+| [degrees(x)](https://www.w3cschool.cn/python3/python3-func-number-degrees.html) | 将弧度转换为角度,如degrees(math.pi/2) ， 返回90.0 |
+| [radians(x)](https://www.w3cschool.cn/python3/python3-func-number-radians.html) | 将角度转换为弧度                                  |
+
+数学常量
+
+| 常量 | 描述                                  |
+| :--- | :------------------------------------ |
+| pi   | 数学常量 pi（圆周率，一般以π来表示）  |
+| e    | 数学常量 e，e即自然常数（自然常数）。 |
+
 #### 1.8.2 序列
+
+在python中，最基本的数据结构为**序列（sequence，简写为seq）**，指的是一块可存放多个值的连续内存空间，这些值按一定顺序排列，可通过每个值所在位置的编号（称为索引）访问它们。
+
+在 Python 中，**序列类型包括字符串、列表、元组、集合和字典**，这些序列支持以下几种通用的操作，但比较特殊的是，**集合和字典不支持索引、切片、相加和相乘操作**。
 
 #### 1.8.3 字符串
 
+字符串（string，简写为str）是 Python 中最常用的数据类型之一。我们可以使用引号( ' 或 " )来创建字符串。
+
+Python 不支持单字符类型，单字符在 Python 中也是作为一个字符串使用。
+
+Python 访问子字符串，可以使用方括号 `[]`来截取字符串（这种方式也被称为切片），字符串的截取的语法格式如下：
+
+```
+变量[头下标:尾下标]
+
+print(str[2:3]) #使用截取方式，用正序进行截取
+print(str[2:-6])#使用截取方式，正序和倒序混合使用
+print(str[-7:-6])#使用截取方式，使用倒序进行截取
+print(str[-7])#使用负索引获取单个字符C
+print(str[2])#使用正索引获取单个字符C
+```
+
+切片：[起始:结束:步长]，也可以简化使用 [起始:结束] 步长表示选取间隔
+
+```python
+print(str1[1:]) # 从下标为1开始，取出后面所有的元素（没有结束位）
+print(str1[:4]) # 从起始位置开始，取到 下标为4的前一个元素（不包括结束位本身）
+print(str1[1:5:2]) # 从下标为1开始，取到下标为5的前一个元素，步长为2（不包括结束位本身）
+```
+
 #### 1.8.4 列表
+
+append在末尾添加元素
+
+```python
+list1 = ['test1', 'test2', 'test3']
+list1.append('test4')
+print(list1)
+```
+
+insert在指定位置插入元素
+
+insert(index, object) 在指定位置index前插入元素object
+
+```python
+list1 = ['test1', 'test2', 'test4']
+list1.insert(2, 'test3')
+print(list1)
+```
+
+extend合并两个列表
+
+通过extend可以将另一个列表中的元素逐一添加到列表中
+
+```python
+list1 = ['a', 'b', 'c']
+list2 = ['d', 'e', 'f']
+list1.extend(list2)
+print(list1)
+```
+
+可以使用列表的下标修改元素
+
+```python
+list1 = ['a', 'b', 'c']
+list1[1] = 'd'
+print(list1)
+```
+
+in（存在）,如果存在那么结果为true，否则为false
+
+```python
+list1 = ['a', 'b', 'c']
+print('b' in list1)
+```
+
+not in（不存在），如果不存在那么结果为true，否则false
+
+```python
+list1 = ['a', 'b', 'c']
+print('d' not in list1)
+```
+
+del：根据下标进行删除
+
+```python
+list1 = ['a', 'b', 'c']
+del list1[0]
+print(list1)
+```
+
+pop：删除最后一个元素
+
+```python
+list1 = ['a', 'b', 'c']
+list1.pop()
+print(list1)
+```
+
+remove：根据元素的值进行删除
+
+```python
+list1 = ['a', 'b', 'c']
+list1.remove('a')
+print(list1)
+```
 
 #### 1.8.5 元组
 
+Python的元组与列表类似，不同之处在于**元组的元素不能修改**。元组使用小括号，列表使用方括号。
+
+访问元组
+
+```python
+tuples = (1, 'a', 'b')
+print(tuples[0])
+```
+
+修改元组
+
+```python
+tuples = (1, 'a', 'b')
+tuples[0] = 2
+print(tuples)
+# TypeError: 'tuple' object does not support item assignment
+```
+
 #### 1.8.6 字典
+
+查看元素
+
+使用key或get方法获取数据
+
+```python
+info = {'name': 'test', 'age': 18}
+print(info)
+
+print(info['name'])
+print(info.get('age'))
+# 获取不存在的key，获取到空的内容，不会出现异常，获取不存在的key, 可以提供一个默认值
+```
+
+修改添加元素
+
+字典的每个元素中的数据是可以修改的，只要通过key找到，即可修改
+
+```python
+info = {'name': 'test', 'age': 18}
+
+info['age'] = 20
+print(info)
+
+# 获取不存在的key为添加元素
+info['id'] = 1
+print(info)
+```
+
+删除元素
+
+```python
+info = {'id': 1, 'name': 'test', 'age': 18}
+
+del info['id']
+print(info)
+
+del info # 删除元素
+
+info.clear() # 清空字典
+print(info)
+```
+
+遍历字典
+
+```python
+info = {'id': 1, 'name': 'test', 'age': 18}
+
+for x in info.keys():
+    print(x)
+
+for x in info.values():
+    print(x)
+
+for x in info.items():
+    print(x)
+# ('id', 1) 输出元组
+
+for x, y in info.items():
+    print(x, y)
+```
 
 #### 1.8.7 集合
 
+集合（set）是一个无序的**不重复元素序列**
+
+```python
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'}
+print(basket)
+
+# 重复元素都被去除了
+```
+
+添加元素
+
+```python
+a = set(('a', 'b'))
+a.add('c')
+print(a)
+
+a.update('c')
+print(a)
+```
+
+删除元素
+
+```python
+a = set(('a', 'b', 'c'))
+a.remove('c')  # 不存在会发生错误
+a.discard('d') # 不存在不会发生错误
+
+a.pop()	# 随机删除一个元素
+print(a)
+```
+
+清空元素
+
+```python
+a = set(('a', 'b', 'c'))
+a.clear()
+print(a)
+```
+
 ### 1.9 函数
+
+Python 定义函数使用 def 关键字，一般格式如下：
+
+```python
+def  函数名（参数列表）：
+    函数体
+```
+
+使用函数来输出"Hello World！"：
+
+```python
+>>> def hello() :
+  print("Hello World!")
+ 
+>>> hello()
+Hello World!
+>>> 
+```
+
+更复杂点的应用，函数中带上参数变量:
+
+```python
+def area(width, height):
+    return width * height
+ 
+def print_welcome(name):
+    print("Welcome", name)
+
+print_welcome("Fred")
+w = 4
+h = 5
+print("width =", w, " height =", h, " area =", area(w, h))
+```
+
+以上实例输出结果：
+
+```python
+Welcome Fred
+width = 4  height = 5  area = 20
+```
+
+#### 1.9.1 函数变量作用域
+
+定义在函数内部的变量拥有一个局部作用域，定义在函数外的拥有全局作用域。
+
+```python
+#!/usr/bin/env python3
+a = 4  # 全局变量
+ 
+def print_func1():
+    a = 17 # 局部变量
+    print("in print_func a = ", a)
+
+def print_func2():   
+    print("in print_func a = ", a)
+
+print_func1()
+print_func2()
+print("a = ", a) 
+```
+
+以上实例运行结果如下：
+
+```python
+in print_func a =  17
+in print_func a =  4
+a =  4
+```
+
+#### 1.9.2 关键字参数
+
+函数也可以使用 kwarg = value 的关键字参数形式被调用。例如，以下函数:
+
+```python
+def parrot(voltage, state='a stiff', action='voom', type='Norwegian Blue'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.")
+    print("-- Lovely plumage, the", type)
+    print("-- It's", state, "!")
+```
+
+可以以下几种方式被调用:
+
+```python
+parrot(1000)                                          # 1 positional argument
+parrot(voltage=1000)                                  # 1 keyword argument
+parrot(voltage=1000000, action='VOOOOOM')             # 2 keyword arguments
+parrot(action='VOOOOOM', voltage=1000000)             # 2 keyword arguments
+parrot('a million', 'bereft of life', 'jump')         # 3 positional arguments
+parrot('a thousand', state='pushing up the daisies')  # 1 positional, 1 keyword
+```
+
+以下为错误调用方法：
+
+```python
+parrot()                     # required argument missing
+parrot(voltage=5.0, 'dead')  # non-keyword argument after a keyword argument
+parrot(110, voltage=220)     # duplicate value for the same argument
+parrot(actor='John Cleese')  # unknown keyword argument
+```
+
+#### 1.9.3 返回值
+
+Python 函数使用 return 语句返回函数值，可以将函数作为一个值赋值给指定变量：
+
+```python
+def return_sum(x,y):
+    c = x + y
+    return c
+
+res = return_sum(4,5)
+print(res)
+```
+
+也可以让函数返回空值：
+
+```python
+def empty_return(x,y):
+    c = x + y
+    return
+
+res = empty_return(4,5)
+print(res)
+```
+
+#### 1.9.4 可变参数列表
+
+最后，一个较不常用的功能是可以让函数调用可变个数的参数。
+
+这些参数被包装进一个元组(查看元组和序列)。
+
+在这些可变个数的参数之前，可以有零到多个普通的参数:
+
+```python
+def arithmetic_mean(*args):
+    if len(args) == 0:
+        return 0
+    else:
+        sum = 0
+        for x in args:
+            sum += x
+        return sum/len(args)
+
+
+print(arithmetic_mean(45,32,89,78))
+print(arithmetic_mean(8989.8,78787.78,3453,78778.73))
+print(arithmetic_mean(45,32))
+print(arithmetic_mean(45))
+print(arithmetic_mean())
+```
+
+以上实例输出结果为：
+
+```python
+61.0
+42502.3275
+38.5
+45.0
+0
+```
 
 ### 1.10 文件
 
+#### 1.10.1 文件读写
+
+open() 将会返回一个 file 对象，基本语法格式如下:
+
+```python
+open(filename, mode)
+```
+
+实例:
+
+```python
+>>> f = open('/tmp/workfile', 'w')
+```
+
+-   第一个参数为要打开的文件名。
+-   第二个参数描述文件如何使用的字符。 mode 可以是 'r' 如果文件只读, 'w' 只用于写 (如果存在同名文件则将被删除), 和 'a' 用于追加文件内容; 所写的任何数据都会被自动增加到末尾. 'r+' 同时用于读写。 mode 参数是可选的； 'r' 将是默认值。
+
+**f.read()**
+
+为了读取一个文件的内容，调用 f.read(size), 这将读取一定数目的数据, 然后作为字符串或字节对象返回。
+
+size 是一个可选的数字类型的参数。 当 size 被忽略了或者为负, 那么该文件的所有内容都将被读取并且返回。
+
+```python
+>>> f.read()
+'This is the entire file.\n'
+>>> f.read()
+''
+```
+
+**f.readline()**
+
+f.readline() 会从文件中读取单独的一行。换行符为 '\n'。f.readline() 如果返回一个空字符串, 说明已经已经读取到最后一行。
+
+```python
+>>> f.readline()
+'This is the first line of the file.\n'
+>>> f.readline()
+'Second line of the file\n'
+>>> f.readline()
+''
+```
+
+**f.readlines()**
+
+f.readlines() 将返回该文件中包含的所有行。
+
+如果设置可选参数 sizehint, 则读取指定长度的字节, 并且将这些字节按行分割。
+
+```python
+>>> f.readlines()
+['This is the first line of the file.\n', 'Second line of the file\n']
+```
+
+另一种方式是迭代一个文件对象然后读取每行:
+
+```python
+>>> for line in f:
+...     print(line, end='')
+...
+This is the first line of the file.
+Second line of the file
+```
+
+这个方法很简单, 但是并没有提供一个很好的控制。 因为两者的处理机制不同, 最好不要混用。
+
+**f.write()**
+
+f.write(string) 将 string 写入到文件中, 然后返回写入的字符数。
+
+```python
+>>> f.write('This is a test\n')
+15
+```
+
+如果要写入一些不是字符串的东西, 那么将需要先进行转换:
+
+```python
+>>> value = ('the answer', 42)
+>>> s = str(value)
+>>> f.write(s)
+18
+```
+
+**f.tell()**
+
+f.tell() 返回文件对象当前所处的位置, 它是从文件开头开始算起的字节数。
+
+**f.seek()**
+
+如果要改变文件当前的位置, 可以使用 f.seek(offset, from_what) 函数。
+
+from_what 的值, 如果是 0 表示开头, 如果是 1 表示当前位置, 2 表示文件的结尾，例如：
+
+-   seek(x, 0) ： 从起始位置即文件首行首字符开始移动 x 个字符
+-   seek(x, 1) ： 表示从当前位置往后移动x个字符
+-   seek(-x, 2)：表示从文件的结尾往前移动x个字符
+
+from_what 值为默认为 0，即文件开头。下面给出一个完整的例子：
+
+```python
+>>> f = open('/tmp/workfile', 'rb+')
+>>> f.write(b'0123456789abcdef')
+16
+>>> f.seek(5)     # 移动到文件的第六个字节
+5
+>>> f.read(1)
+b'5'
+>>> f.seek(-3, 2) # 移动到文件的倒数第三字节
+13
+>>> f.read(1)
+b'd'
+```
+
+**f.close()**
+
+在文本文件中 (那些打开文件的模式下没有 b 的), 只会相对于文件起始位置进行定位。
+
+当你处理完一个文件后, 调用 f.close() 来关闭文件并释放系统的资源，如果尝试再调用该文件，则会抛出异常。
+
+```python
+>>> f.close()
+>>> f.read()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+ValueError: I/O operation on closed file
+<pre>
+<p>
+当处理一个文件对象时, 使用 with 关键字是非常好的方式。在结束后, 它会帮你正确的关闭文件。 而且写起来也比 try - finally 语句块要简短:</p>
+<pre>
+>>> with open('/tmp/workfile', 'r') as f:
+...     read_data = f.read()
+>>> f.closed
+True
+```
+
+#### 1.10.2 序列化与反序列化
+
+Python 的 pickle 模块实现了基本的数据序列和反序列化。
+
+通过 pickle 模块的序列化操作我们能够将程序中运行的对象信息保存到文件中去，永久存储。
+
+通过 pickle 模块的反序列化操作，我们能够从文件中创建上一次程序保存的对象。
+
+基本接口：
+
+```python
+pickle.dump(obj, file, [,protocol])
+```
+
+有了 pickle 这个对象, 就能对 file 以读取的形式打开:
+
+```python
+x = pickle.load(file)
+```
+
+**注解：**从 file 中读取一个字符串，并将它重构为原来的 Python 对象。
+
+**file:** 类文件对象，有read() 和 readline() 接口。
+
+实例 1：
+
+```python
+#使用pickle模块将数据对象保存到文件
+
+import pickle
+
+data1 = {'a': [1, 2.0, 3, 4+6j],
+         'b': ('string', u'Unicode string'),
+         'c': None}
+
+selfref_list = [1, 2, 3]
+selfref_list.append(selfref_list)
+
+output = open('data.pkl', 'wb')
+
+# Pickle dictionary using protocol 0.
+pickle.dump(data1, output)
+
+# Pickle the list using the highest protocol available.
+pickle.dump(selfref_list, output, -1)
+
+output.close()
+```
+
+实例 2：
+
+```python
+#使用pickle模块从文件中重构python对象
+
+import pprint, pickle
+
+pkl_file = open('data.pkl', 'rb')
+
+data1 = pickle.load(pkl_file)
+pprint.pprint(data1)
+
+data2 = pickle.load(pkl_file)
+pprint.pprint(data2)
+
+pkl_file.close()
+```
+
 ### 1.11 异常
+
+即便 Python 程序的语法是正确的，在运行它的时候，也有可能发生错误。运行期检测到的错误被称为异常。
+
+大多数的异常都不会被程序处理，都以错误信息的形式展现在这里:
+
+```python
+>>> 10 * (1/0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+ZeroDivisionError: division by zero
+>>> 4 + spam*3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+NameError: name 'spam' is not defined
+>>> '2' + 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+TypeError: Can't convert 'int' object to str implicitly
+```
+
+异常以不同的类型出现，这些类型都作为信息的一部分打印出来: 例子中的类型有 ZeroDivisionError，NameError 和 TypeError。错误信息的前面部分显示了异常发生的上下文，并以调用栈的形式显示具体信息。
+
+以下例子中，让用户输入一个合法的整数，但是允许用户中断这个程序（使用 Control-C 或者操作系统提供的方法）。用户中断的信息会引发一个 KeyboardInterrupt 异常。
+
+```python
+>>> while True:
+        try:
+            x = int(input("Please enter a number: "))
+            break
+        except ValueError:
+            print("Oops!  That was no valid number.  Try again   ")
+   
+```
+
+try 语句按照如下方式工作；
+
+-   首先，执行 try 子句（在关键字 try 和关键字 except 之间的语句）
+-   如果没有异常发生，忽略 except 子句，try 子句执行后结束。
+-   如果在执行 try 子句的过程中发生了异常，那么 try 子句余下的部分将被忽略。如果异常的类型和 except 之后的名称相符，那么对应的 except 子句将被执行。最后执行 try 语句之后的代码。
+-   如果一个异常没有与任何的 except 匹配，那么这个异常将会传递给上层的 try 中。
+
+一个 try 语句可能包含多个 except 子句，分别来处理不同的特定的异常。最多只有一个分支会被执行。
+
+处理程序将只针对对应的 try 子句中的异常进行处理，而不是其他的 try 的处理程序中的异常。
+
+一个 except 子句可以同时处理多个异常，这些异常将被放在一个括号里成为一个元组，例如:
+
+```python
+>>> except (RuntimeError, TypeError, NameError):
+        pass
+```
+
+最后一个 except 子句可以忽略异常的名称，它将被当作通配符使用。可以使用这种方法打印一个错误信息，然后再次把异常抛出。
+
+```python
+import sys
+
+try:
+    f = open('myfile.txt')
+    s = f.readline()
+    i = int(s.strip())
+except OSError as err:
+    print("OS error: {0}".format(err))
+except ValueError:
+    print("Could not convert data to an integer.")
+except:
+    print("Unexpected error:", sys.exc_info()[0])
+    raise
+```
+
+try except 语句还有一个可选的 else 子句，如果使用这个子句，那么必须放在所有的 except 子句之后。这个子句将在 try 子句没有发生任何异常的时候执行。例如:
+
+```python
+for arg in sys.argv[1:]:
+    try:
+        f = open(arg, 'r')
+    except IOError:
+        print('cannot open', arg)
+    else:
+        print(arg, 'has', len(f.readlines()), 'lines')
+        f.close()
+```
+
+使用 else 子句比把所有的语句都放在 try 子句里面要好，这样可以避免一些意想不到的、而except又没有捕获的异常。
+
+异常处理并不仅仅处理那些直接发生在try子句中的异常，而且还能处理子句中调用的函数（甚至间接调用的函数）里抛出的异常。例如:
+
+```python
+>>> def this_fails():
+        x = 1/0
+   
+>>> try:
+        this_fails()
+    except ZeroDivisionError as err:
+        print('Handling run-time error:', err)
+   
+Handling run-time error: int division or modulo by zero
+```
+
+#### 1.11.1 抛出异常
+
+Python 使用 raise 语句抛出一个指定的异常。例如:
+
+```python
+>>> raise NameError('HiThere')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+NameError: HiThere
+```
+
+raise 唯一的一个参数指定了要被抛出的异常。它必须是一个异常的实例或者是异常的类（也就是 Exception 的子类）。
+
+如果你只想知道这是否抛出了一个异常，并不想去处理它，那么一个简单的 raise 语句就可以再次把它抛出。
+
+```python
+>>> try:
+        raise NameError('HiThere')
+    except NameError:
+        print('An exception flew by!')
+        raise
+   
+An exception flew by!
+Traceback (most recent call last):
+  File "<stdin>", line 2, in ?
+NameError: HiThere
+```
+
+#### 1.11.2 用户自定义异常
+
+你可以通过创建一个新的 exception 类来拥有自己的异常。异常应该继承自 Exception 类，或者直接继承，或者间接继承，例如:
+
+```python
+>>> class MyError(Exception):
+        def __init__(self, value):
+            self.value = value
+        def __str__(self):
+            return repr(self.value)
+   
+>>> try:
+        raise MyError(2*2)
+    except MyError as e:
+        print('My exception occurred, value:', e.value)
+   
+My exception occurred, value: 4
+>>> raise MyError('oops!')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+__main__.MyError: 'oops!'
+```
+
+在这个例子中，类 Exception 默认的 __init__() 被覆盖。
+
+异常的类可以像其他的类一样做任何事情，但是通常都会比较简单，只提供一些错误相关的属性，并且允许处理异常的代码方便的获取这些信息。
+
+当创建一个模块有可能抛出多种不同的异常时，一种通常的做法是为这个包建立一个基础异常类，然后基于这个基础类为不同的错误情况创建不同的子类:
+
+```python
+class Error(Exception):
+    """Base class for exceptions in this module."""
+    pass
+
+class InputError(Error):
+    """Exception raised for errors in the input.
+
+    Attributes:
+        expression -- input expression in which the error occurred
+        message -- explanation of the error
+    """
+
+    def __init__(self, expression, message):
+        self.expression = expression
+        self.message = message
+
+class TransitionError(Error):
+    """Raised when an operation attempts a state transition that's not
+    allowed.
+
+    Attributes:
+        previous -- state at beginning of transition
+        next -- attempted new state
+        message -- explanation of why the specific transition is not allowed
+    """
+
+    def __init__(self, previous, next, message):
+        self.previous = previous
+        self.next = next
+        self.message = message
+```
+
+大多数的异常的名字都以"Error"结尾，就跟标准的异常命名一样。
+
+#### 1.11.3 定义清理行为
+
+try 语句还有另外一个可选的子句，它定义了无论在任何情况下都会执行的清理行为。 例如:
+
+```python
+>>> try:
+        raise KeyboardInterrupt
+    finally:
+        print('Goodbye, world!')
+   
+Goodbye, world!
+KeyboardInterrupt
+```
+
+以上例子不管 try 子句里面有没有发生异常，finally 子句都会执行。
+
+如果一个异常在 try 子句里（或者在 except 和 else 子句里）被抛出，而又没有任何的 except 把它截住，那么这个异常会在 finally 子句执行后再次被抛出。
+
+下面是一个更加复杂的例子（在同一个 try 语句里包含 except 和 finally 子句）:
+
+```python
+>>> def divide(x, y):
+        try:
+            result = x / y
+        except ZeroDivisionError:
+            print("division by zero!")
+        else:
+            print("result is", result)
+        finally:
+            print("executing finally clause")
+   
+>>> divide(2, 1)
+result is 2.0
+executing finally clause
+>>> divide(2, 0)
+division by zero!
+executing finally clause
+>>> divide("2", "1")
+executing finally clause
+Traceback (most recent call last):
+  File "<stdin>", line 1, in ?
+  File "<stdin>", line 3, in divide
+TypeError: unsupported operand type(s) for /: 'str' and 'str'
+```
+
+#### 1.11.4 预定义的清理行为
+
+一些对象定义了标准的清理行为，无论系统是否成功的使用了它，一旦不需要它了，那么这个标准的清理行为就会执行。
+
+这面这个例子展示了尝试打开一个文件，然后把内容打印到屏幕上:
+
+```python
+for line in open("myfile.txt"):
+    print(line, end="")
+```
+
+以上这段代码的问题是，当执行完毕后，文件会保持打开状态，并没有被关闭。
+
+关键词 with 语句就可以保证诸如文件之类的对象在使用完之后一定会正确的执行他的清理方法:
+
+```python
+with open("myfile.txt") as f:
+    for line in f:
+        print(line, end="")
+```
+
+以上这段代码执行完毕后，就算在处理过程中出问题了，文件 f 总是会关闭。
