@@ -2414,3 +2414,42 @@ with open("myfile.txt") as f:
 ```
 
 以上这段代码执行完毕后，就算在处理过程中出问题了，文件 f 总是会关闭。
+
+## 2 urllib
+
+通常我们说的爬虫都是聚焦爬虫，根据需求，实现爬虫程序，抓取需要的数据。
+
+爬虫技术的不断升级，反爬手段也在不断更新，User- Agent、代理IP、验证码访问、动态加载网页、数据加密等
+
+### 2.1 urllib库的使用
+
+模拟浏览器向服务器发送请求
+
+```python
+url = "http://www.baidu.com"
+response = urllib.request.urlopen(url)
+# response是HttpResponse类型
+# 字节->字符串 解码decode
+# 字符串->字节 编码encode
+```
+
+常用的方法
+
+```python 
+# 字节形式读取二进制
+response.read()
+# 读取一行
+response.readline()
+# 一行行读取，直至结束
+response.readlines()
+# 获取状态码
+print(response.getcode())
+# 获取url
+print(response.geturl())
+# 获取响应头
+print(response.getheaders())
+
+# 下载资源 参数1:资源地址 参数2:另存为文件名
+urllib.request.urlretrieve("http://www.baidu.com", "baidu.html")
+```
+
