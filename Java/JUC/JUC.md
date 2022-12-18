@@ -1,4 +1,4 @@
-# JUC
+# 多线程与高并发
 
 ## 1 Thread
 
@@ -593,7 +593,7 @@ Thread[线程 2,5,main]get resource2
 Process finished with exit code 0
 ```
 
-线程 1 首先获得到 resource1 的监视器锁,这时候线程 2 就获取不到了。然后线程 1 再去获取 resource2 的监视器锁，可以获取到。然后线程 1 释放了对 resource1、resource2 的监视器锁的占用，线程 2 获取到就可以执行了。这样就破坏了破坏循环等待条件，因此避免了死锁。
+线程 1 首先获得到 resource1 的监视器锁,这时候线程 2 就获取不到了。然后线程 1 再去获取 resource2 的监视器锁，可以获取到。然后线程 1 释放了对 resource1、resource2 的监视器锁的占用，线程 2 获取到就可以执行了。这样就破坏了循环等待条件，因此避免了死锁。
 
 ## 2 JUC
 
@@ -1303,7 +1303,7 @@ private static void listUnsafe() {
 2. 使用Collections工具类提供的Collections.synchronizedList(new ArrayList());
 3. 使用JUC提供的new CopyOnWriteArrayList();
 
-其中CopyOn WriteArrayList方案源码，利用可重用锁解决。
+其中CopyOnWriteArrayList方案源码，利用可重用锁解决。
 
 ![image-20220929213027661](assets/image-20220929213027661.png)
 
